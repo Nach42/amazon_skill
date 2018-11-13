@@ -8,6 +8,11 @@ const Alexa = require('alexa-sdk');
 //Replace with your app ID (OPTIONAL).  You can find this value at the top of your skill's page on http://developer.amazon.com.
 //Make sure to enclose your value in quotes, like this: const APP_ID = 'amzn1.ask.skill.bb4045e6-b3e8-4133-b650-72923c5980f1';
 const APP_ID = 'amzn1.ask.skill.1c0c1066-2e32-4a15-8749-4f57331fee58';
+var metadata = {
+    waitForMoreResponsesMs: 500,
+    channelSecretKey: '2ngdurGTGYRMW6dc5zfPwQlMmNtFhiE4',
+    channelUrl: 'https://amce2bmxp-univcreditsavt.mobile.ocp.oraclecloud.com:443/connectors/v1/tenants/idcs-188833f670f149a3ac2892ac9359b66e/listeners/webhook/channels/FF688C19-69D0-47A2-979B-B92D9C0C8878'
+};
 
 const SKILL_NAME = 'Tech Buyer';
 const GET_FACT_MESSAGE = "Here's your fact: ";
@@ -47,7 +52,7 @@ const handlers = {
         const factIndex = Math.floor(Math.random() * factArr.length);
         const randomFact = factArr[factIndex];
         const speechOutput = GET_FACT_MESSAGE + randomFact;
-
+        request
         this.response.cardRenderer(SKILL_NAME, randomFact);
         this.response.speak(speechOutput).listen('que pasa');
         this.emit(':responseReady');
