@@ -1,0 +1,17 @@
+{
+  "name": "amazon_skill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ignacio Dones Tellez",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "crypto": "^1.0.1",
+    "promise": "^8.0.2",
+    "request": "^2.88.0"
+  }
+}
