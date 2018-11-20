@@ -12,7 +12,6 @@ const Promise = require('promise');
 
 PubSub.immediateExceptions = true;
 
-var PORT = process.env.port || 8080;
 var host = '0.0.0.0';
 var express_app = express();
 var alexa_app = new alexa.app("app");
@@ -304,6 +303,6 @@ express_app.post('/webhook', bodyParser.json(), (req, res)=>{
 });
 
 alexa_app.express({ expressApp: express_app, checkCert: false });
-express_app.listen(PORT, host, ()=>{
-    console.log('Corriendo en puerto: '+PORT);
+express_app.listen(process.env.port || 8080, ()=>{
+    console.log('Corriendo en puerto: 8080');
 });
